@@ -3,10 +3,16 @@ import Navbar from './Navbar'
 import Hero from './Hero'
 import Sidebar from './Sidebar'
 import Submenu from './Submenu'
+import {useGlobalContext} from './context'
 function App() {
+  const {curMenuItem}=useGlobalContext();
+
   return (
     <>
-      <h2>stripe submenus setup</h2>
+      <Navbar/>
+      <Sidebar/>
+      <Hero/>
+      {curMenuItem&&<Submenu/>}
     </>
   )
 }

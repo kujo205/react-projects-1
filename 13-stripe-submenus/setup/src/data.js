@@ -13,6 +13,7 @@ const sublinks = [
     page: 'developers',
     links: [
       { label: 'plugins', icon: <FaBook />, url: '/products' },
+      { label: 'plugins', icon: <FaBook />, url: '/products' },
       { label: 'libraries', icon: <FaBook />, url: '/products' },
       { label: 'help', icon: <FaBook />, url: '/products' },
       { label: 'billing', icon: <FaBook />, url: '/products' },
