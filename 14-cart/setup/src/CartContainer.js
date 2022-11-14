@@ -3,7 +3,7 @@ import CartItem from './CartItem'
 import { useGlobalContext } from './context'
 
 const CartContainer = () => {
-  const { cart } = useGlobalContext()
+  const { cart,dispatchCart } = useGlobalContext()
   if (cart.length === 0) {
     return (
       <section className='cart'>
@@ -32,12 +32,14 @@ const CartContainer = () => {
         <hr />
         <div className='cart-total'>
           <h4>
-            total <span>$0.00</span>
+            total <span>${(cart.reduce((acc,cr)=>{
+            
+            return (acc+cr.price*cr.amount)},0)).toFixed(2)}</span>
           </h4>
         </div>
         <button
           className='btn clear-btn'
-          onClick={() => console.log('clear cart')}
+          onClick={()=>dispatchCart({type:'CLEAR',id:null})}
         >
           clear cart
         </button>
